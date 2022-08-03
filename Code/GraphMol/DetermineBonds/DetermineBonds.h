@@ -12,12 +12,14 @@
 #pragma once
 #include <GraphMol/RDKitBase.h>
 
+// check include gaurds 
+
 namespace RDKit {
 
 void determineConnectivity(RWMol &mol, bool useHuckel=false, int charge=0, double covFactor=1.3);
 
-void connectivityHuckel(RWMol &mol, int charge=0);
+void determineBondOrder(RWMol &mol, bool ignoreChiral=false, bool allowChargedFragments=false, int charge=0);
 
-void connectivityVdW(RWMol &mol, double covFactor=1.3);
 
-}
+} // namespace RDKit
+
